@@ -1,0 +1,29 @@
+数据集制作单位：未来自主研究中心(FIRC)
+版权单位：未来自主研究中心(FIRC)
+联系方式：1623863129@qq.com
+版权声明：数据集仅仅供个人使用，版权归未来自主研究中心所有，个人购买后只享有单独使用权利可以用于发表论文或者个人研究，不得对数据集做商业行为，不得未在未来自主研究中心授权情况下进行商业应用，一经发现，公司企业或者个人将承担相应法律责任。任何组织或者个人不得以任何形式在互联网进行传播和进行商业行为，不得进行二次销售和非法谋利，不得在未授权情况下挂淘宝、咸鱼等交易网站公开售卖,由此引发的法律责任需自行承担
+数据集格式：Pascal VOC格式+YOLO格式(不包含分割路径的txt文件，仅仅包含jpg图片以及对应的VOC格式xml文件和yolo格式txt文件)
+图片数量(jpg文件个数)：8093
+标注数量(xml文件个数)：8093
+标注数量(txt文件个数)：8093
+标注类别数：11
+所在github仓库：firc-dataset
+标注类别名称(注意yolo格式类别顺序不和这个对应，而以labels文件夹classes.txt为准):["Acne","Atrophic Scars","Blackheads","Dark-Spots","Englarged-Pores","Whiteheads","black_dots","normal skin","pustules","redness","skin redness"]
+每个类别标注的框数：
+Acne (痤疮) 框数 = 50361
+Atrophic Scars (萎缩性疤痕) 框数 = 1056
+Blackheads (黑头) 框数 = 1443
+Dark-Spots (暗斑) 框数 = 4792
+Englarged-Pores (毛孔粗大) 框数 = 749
+Whiteheads (白头) 框数 = 3143
+black_dots (黑点) 框数 = 1283
+normal skin (正常皮肤) 框数 = 28
+pustules (脓疱) 框数 = 1764
+redness (泛红) 框数 = 513
+skin redness (皮肤泛红) 框数 = 267
+总框数：65399
+图片分辨率：1024x1024
+使用标注工具：labelImg
+标注规则：对类别进行画矩形框
+重要说明：暂无
+特别声明：本数据集不对训练的模型或者权重文件精度作任何保证

@@ -1,0 +1,152 @@
+{
+  "config": {
+    "model_path": "/root/vlm_api/models/Qwen2.5-VL-7B-Instruct",
+    "image_root": "test_images/face",
+    "tasks": [
+      "face_style"
+    ],
+    "labels_by_task": {
+      "face_style": [
+        "椭圆",
+        "方脸"
+      ]
+    },
+    "repeat": 1,
+    "warmup": 1,
+    "limit_per_task": 2,
+    "max_new_tokens": 48,
+    "dtype": "bfloat16",
+    "device_map": "auto",
+    "attn_implementation": "sdpa",
+    "min_pixels": 200704,
+    "max_pixels": 1003520,
+    "allow_tf32": true,
+    "load_sec": 20.2262
+  },
+  "environment": {
+    "python": "3.10.20",
+    "platform": "Linux-3.10.0-1160.el7.x86_64-x86_64-with-glibc2.31",
+    "torch": "2.5.1+cu121",
+    "cuda_available": true,
+    "torch_cuda_version": "12.1",
+    "cudnn_version": 90100,
+    "gpu_index": 0,
+    "gpu_name": "NVIDIA A100 80GB PCIe",
+    "gpu_memory_gb": 79.14,
+    "gpu_capability": "8.0",
+    "dtype": "torch.bfloat16",
+    "attn_implementation": "sdpa",
+    "allow_tf32": true,
+    "min_pixels": 200704,
+    "max_pixels": 1003520
+  },
+  "prompts_by_task": {
+    "face_style": "你是一个严格的脸型分类评测模型。请只判断图片中人物的脸型轮廓，不要判断发型、妆容或表情。\n候选标签只有这些：椭圆、方脸\n判别标准：\n- 椭圆：脸长略大于脸宽，额头和下颌线条圆润流畅，下巴不过尖。\n- 方脸：下颌角明显，脸部轮廓偏方，额头、颧骨、下颌宽度接近。\n如果图片存在参考文字、文件名、目录名或水印，请忽略它们，只看人物面部区域。\n请必须且只能从候选标签中选择一个最接近的标签。\n只输出合法 JSON，不要输出 Markdown，不要解释，不要输出候选标签之外的内容。\n输出格式固定为：{\"label\":\"候选标签之一\"}"
+  },
+  "summary": {
+    "overall": {
+      "total_runs": 2,
+      "ok_runs": 2,
+      "correct_runs": 1,
+      "accuracy_all_runs": 0.5,
+      "accuracy_ok_runs": 0.5,
+      "json_success_rate": 1.0,
+      "end_to_end_latency_sec": {
+        "mean": 0.3024,
+        "min": 0.2994,
+        "p50": 0.3024,
+        "p90": 0.3048,
+        "p95": 0.3051,
+        "max": 0.3054
+      },
+      "generate_latency_sec": {
+        "mean": 0.2741,
+        "min": 0.2511,
+        "p50": 0.2741,
+        "p90": 0.2924,
+        "p95": 0.2947,
+        "max": 0.297
+      },
+      "tokens_per_sec_mean": 25.7234
+    },
+    "by_task": {
+      "face_style": {
+        "total_runs": 2,
+        "ok_runs": 2,
+        "correct_runs": 1,
+        "accuracy_all_runs": 0.5,
+        "accuracy_ok_runs": 0.5,
+        "json_success_rate": 1.0,
+        "end_to_end_latency_sec": {
+          "mean": 0.3024,
+          "min": 0.2994,
+          "p50": 0.3024,
+          "p90": 0.3048,
+          "p95": 0.3051,
+          "max": 0.3054
+        },
+        "generate_latency_sec": {
+          "mean": 0.2741,
+          "min": 0.2511,
+          "p50": 0.2741,
+          "p90": 0.2924,
+          "p95": 0.2947,
+          "max": 0.297
+        },
+        "tokens_per_sec_mean": 25.7234,
+        "confusion_matrix": {
+          "椭圆": {
+            "椭圆": 1
+          },
+          "方脸": {
+            "椭圆": 1
+          }
+        }
+      }
+    }
+  },
+  "rows": [
+    {
+      "round": 1,
+      "task": "face_style",
+      "task_name": "脸型",
+      "image_name": "Oval_face4.png",
+      "image_path": "test_images/face/face_style/Oval_face4.png",
+      "ground_truth": "椭圆",
+      "ground_truth_raw": "Oval_face4",
+      "prediction": "椭圆",
+      "prediction_raw": "椭圆",
+      "correct": true,
+      "ok": true,
+      "json_ok": true,
+      "end_to_end_sec": 0.2994,
+      "generate_sec": 0.2511,
+      "generated_tokens": 7,
+      "tokens_per_sec": 27.8741,
+      "max_gpu_mem_gb": 15.545,
+      "raw_output": "{\"label\":\"椭圆\"}",
+      "error": ""
+    },
+    {
+      "round": 1,
+      "task": "face_style",
+      "task_name": "脸型",
+      "image_name": "square_face3.png",
+      "image_path": "test_images/face/face_style/square_face3.png",
+      "ground_truth": "方脸",
+      "ground_truth_raw": "square_face3",
+      "prediction": "椭圆",
+      "prediction_raw": "椭圆",
+      "correct": false,
+      "ok": true,
+      "json_ok": true,
+      "end_to_end_sec": 0.3054,
+      "generate_sec": 0.297,
+      "generated_tokens": 7,
+      "tokens_per_sec": 23.5728,
+      "max_gpu_mem_gb": 15.5458,
+      "raw_output": "{\"label\":\"椭圆\"}",
+      "error": ""
+    }
+  ]
+}

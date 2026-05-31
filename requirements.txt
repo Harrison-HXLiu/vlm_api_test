@@ -1,0 +1,15 @@
+# Requirements for this project's virtual environment
+# Adjust versions as needed for your environment
+torch>=2.0.0
+transformers>=4.30.0
+accelerate>=0.20.0
+safetensors>=0.3.0
+sentencepiece>=0.1.99
+tokenizers>=0.13.3
+ftfy>=6.1.1
+einops>=0.6.0
+pillow>=9.0.0
+opencv-python>=4.7.0
+numpy>=1.23.0
+# Optional: uncomment if using 8-bit optimizations
+# bitsandbytes>=0.39.0

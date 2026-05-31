@@ -1,0 +1,18 @@
+# Ignore model weight files and checkpoints
+*.safetensors
+*.pt
+*.bin
+*.ckpt
+*.tar
+*.tar.gz
+model*.index.json
+*.safetensors.index.json
+*.bin.index.json
+
+# Keep small metadata and config files (allow JSON/MD/TXT to be checked in)
+!*.json
+!*.md
+!*.txt
+
+# If you prefer to ignore entire model folders, uncomment the next line
+# */

@@ -1,0 +1,15 @@
+train: ./data/train/images
+val: ./data/val/images
+nc: 11
+names:
+  0: Acne
+  1: Atrophic Scars
+  2: Blackheads
+  3: Dark-Spots
+  4: Englarged-Pores
+  5: Whiteheads
+  6: black_dots
+  7: normal skin
+  8: pustules
+  9: redness
+  10: skin redness

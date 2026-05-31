@@ -1,0 +1,3 @@
+﻿round,task,image_name,ground_truth,prediction,prediction_raw,correct,ok,json_ok,end_to_end_sec,generate_sec,generated_tokens,tokens_per_sec,max_gpu_mem_gb,error,raw_output
+1,face_style,Oval_face4.png,椭圆,椭圆,椭圆,True,True,True,0.2994,0.2511,7,27.8741,15.545,,"{""label"":""椭圆""}"
+1,face_style,square_face3.png,方脸,椭圆,椭圆,False,True,True,0.3054,0.297,7,23.5728,15.5458,,"{""label"":""椭圆""}"
