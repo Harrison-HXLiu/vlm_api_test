@@ -54,3 +54,31 @@ python face_benchmark.py \
 ```
 
 # 开启接口
+python -m vllm.entrypoints.openai.api_server \
+  --model /root/vlm_api/models/Qwen2.5-VL-7B-Instruct \
+  --host 0.0.0.0 \
+  --port 8000 \
+  --served-model-name qwen2.5-vl-7b \
+  --trust-remote-code \
+  --max-model-len 8192 \
+  --limit-mm-per-prompt image=1 \
+  --gpu-memory-utilization 0.85 \
+  --api-key your api
+
+# 调用示例
+from openai import OpenAI
+
+client = OpenAI(
+    api_key="your api",
+    base_url="http://42.193.241.119:35457/v1"
+)
+
+resp = client.chat.completions.create(
+    model="qwen2.5-vl-7b",
+    messages=[
+        {"role": "user", "content": "你好，简单介绍一下你自己"}
+    ],
+    max_tokens=100
+)
+
+print(resp.choices[0].message.content)
