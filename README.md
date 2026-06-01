@@ -1,8 +1,8 @@
 # 测试环境
-- python 3.10
-- torch：2.5.1+cu121
-- Cuda: 12.1
-- vllm
+torch：2.6.0+cu124
+Python 3.10.20
+CUDA Version: 12.4
+vllm：0.8.5.post1
 
 # 安装依赖
 ```
